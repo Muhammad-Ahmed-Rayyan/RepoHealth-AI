@@ -19,9 +19,9 @@ Built with the tools and technologies:
 ![TailwindCSS](https://img.shields.io/badge/TailwindCSS-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
 ![Node.js](https://img.shields.io/badge/Node.js-%23339933.svg?style=for-the-badge&logo=node.js&logoColor=white)
 ![Express](https://img.shields.io/badge/Express-%23000000.svg?style=for-the-badge&logo=express&logoColor=white)
-![Recharts](https://img.shields.io/badge/Recharts-Data%20Viz-8884d8?style=for-the-badge)
+![Recharts](https://img.shields.io/badge/Recharts-8884d8.svg?style=for-the-badge&logo=recharts&logoColor=white)
 ![OpenAI](https://img.shields.io/badge/OpenAI-white.svg?style=for-the-badge&logo=openai&logoColor=black)
-![Gemini](https://img.shields.io/badge/Gemini%203%20Pro-white.svg?style=for-the-badge&logo=google-gemini&logoColor=4285F4)
+![Gemini](https://img.shields.io/badge/Gemini-white.svg?style=for-the-badge&logo=google-gemini&logoColor=4285F4)
 ![Vercel](https://img.shields.io/badge/Vercel-000000.svg?style=for-the-badge&logo=vercel&logoColor=white)
 
 </div>
