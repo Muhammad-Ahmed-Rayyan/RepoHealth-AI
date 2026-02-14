@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Root variables for theming */
+  :root {
+    --color-bg-primary: 249 250 251;
+    --color-bg-secondary: 255 255 255;
+    --color-bg-tertiary: 243 244 246;
+    --color-text-primary: 15 23 42;
+    --color-text-secondary: 71 85 105;
+    --color-border: 226 232 240;
+  }
+
+  .dark {
+    --color-bg-primary: 15 23 42;
+    --color-bg-secondary: 30 41 59;
+    --color-bg-tertiary: 51 65 85;
+    --color-text-primary: 248 250 252;
+    --color-text-secondary: 203 213 225;
+    --color-border: 51 65 85;
+  }
+
+  body {
+    @apply bg-gradient-to-br from-slate-50 via-slate-100 to-slate-200 dark:from-slate-950 dark:via-slate-900 dark:to-slate-800 text-slate-900 dark:text-slate-50 transition-colors duration-300;
+    min-height: 100vh;
+  }
+}
+
+@layer utilities {
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-slate-200 dark:bg-slate-800;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-400 dark:bg-slate-600 rounded;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-slate-500 dark:bg-slate-500;
+  }
+
+  /* Smooth theme transitions */
+  * {
+    @apply transition-colors duration-200;
+  }
+
+  /* Card styles */
+  .card {
+    @apply bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl shadow-sm;
+  }
+
+  .card-hover {
+    @apply hover:shadow-md hover:border-primary-300 dark:hover:border-primary-700 transition-all duration-200;
+  }
+}
+
+/* Markdown content styling */
+.markdown-content h1,
+.markdown-content h2,
+.markdown-content h3 {
+  @apply font-bold mt-4 mb-2;
+}
+
+.markdown-content h1 { @apply text-2xl; }
+.markdown-content h2 { @apply text-xl; }
+.markdown-content h3 { @apply text-lg; }
+
+.markdown-content p {
+  @apply my-2;
+}
+
+.markdown-content strong {
+  @apply font-bold text-slate-900 dark:text-slate-100;
+}
+
+.markdown-content em {
+  @apply italic;
+}
+
+.markdown-content ul,
+.markdown-content ol {
+  @apply my-2 ml-4;
+}
+
+.markdown-content li {
+  @apply my-1;
+}
+
+.markdown-content code {
+  @apply bg-slate-200 dark:bg-slate-700 px-1 py-0.5 rounded text-sm font-mono;
+}
+
+.markdown-content a {
+  @apply text-primary-600 dark:text-primary-400 hover:underline;
+}
