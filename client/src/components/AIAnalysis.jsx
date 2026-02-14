@@ -9,8 +9,8 @@ import {
   Users,
   Wrench,
   CheckCircle2,
-  Wand2,
-  RefreshCw
+  RefreshCw,
+  Loader2
 } from 'lucide-react';
 import { generateAIInsights } from '../utils/api';
 
@@ -39,13 +39,27 @@ const getPriorityColor = (priority) => {
 const SuggestionCard = ({ suggestion, index }) => {
   const Icon = categoryIcons[suggestion.category] || AlertTriangle;
   
+  // Get priority-based left border color
+  const getBorderColor = () => {
+    switch (suggestion.priority?.toLowerCase()) {
+      case 'high': 
+        return 'border-l-4 border-l-rose-500';
+      case 'medium': 
+        return 'border-l-4 border-l-amber-500';
+      case 'low': 
+        return 'border-l-4 border-l-blue-500';
+      default: 
+        return 'border-l-4 border-l-slate-500';
+    }
+  };
+  
   return (
     <div 
-      className="bg-slate-50 dark:bg-slate-700/50 border border-slate-200 dark:border-slate-600 rounded-lg p-5 hover:border-primary-300 dark:hover:border-primary-600 hover:shadow-md transition-all duration-200 animate-slide-up"
+      className={`bg-gradient-to-br from-slate-50 to-white dark:from-slate-700/50 dark:to-slate-700/30 border border-white/5 dark:border-white/5 rounded-2xl p-5 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 animate-slide-up shadow-lg ${getBorderColor()}`}
       style={{ animationDelay: `${index * 100}ms` }}
     >
       <div className="flex items-start gap-4">
-        <div className="p-2 bg-gradient-to-br from-primary-100 to-primary-200 dark:from-primary-900/30 dark:to-primary-800/30 rounded-lg flex-shrink-0">
+        <div className="p-2 bg-white/5 dark:bg-white/5 rounded-lg flex-shrink-0">
           <Icon className="w-5 h-5 text-primary-600 dark:text-primary-400" />
         </div>
         
@@ -75,10 +89,7 @@ const SuggestionCard = ({ suggestion, index }) => {
 const LoadingState = () => (
   <div className="animate-pulse space-y-4">
     <div className="flex items-center justify-center py-8">
-      <div className="relative">
-        <Wand2 className="w-12 h-12 text-primary-500 dark:text-primary-400 animate-spin-slow" />
-        <Sparkles className="w-6 h-6 text-accent-500 dark:text-accent-400 absolute -top-1 -right-1 animate-pulse" />
-      </div>
+      <Loader2 className="w-12 h-12 text-primary-500 dark:text-primary-400 animate-spin" />
     </div>
     <div className="text-center">
       <p className="text-lg font-semibold text-slate-900 dark:text-slate-100 mb-2">
@@ -131,9 +142,9 @@ export default function AIAnalysis({ repositoryData, repoUrl }) {
   };
 
   return (
-    <div className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-8 animate-fade-in shadow-sm">
+    <div className="bg-gradient-to-br from-white to-slate-50 dark:from-slate-800 dark:to-slate-800/60 border border-white/5 dark:border-white/5 rounded-2xl p-8 animate-fade-in shadow-lg">
       <div className="flex items-center gap-3 mb-6">
-        <div className="p-3 bg-gradient-to-br from-primary-500 to-accent-500 rounded-xl shadow-lg">
+        <div className="p-3 bg-primary-500 rounded-xl shadow-lg">
           <Sparkles className="w-6 h-6 text-white" />
         </div>
         <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-100 tracking-tight">AI-Powered Insights</h2>
@@ -141,10 +152,10 @@ export default function AIAnalysis({ repositoryData, repoUrl }) {
 
       {/* Initial State - Show Generate Button */}
       {!analysis && !loading && !error && (
-        <div className="text-center py-12">
+        <div className="text-center py-12 border border-dashed border-white/10 dark:border-white/10 rounded-xl">
           <div className="mb-6">
-            <div className="inline-flex p-4 bg-gradient-to-br from-primary-100 to-accent-100 dark:from-primary-900/20 dark:to-accent-900/20 rounded-full mb-4">
-              <Wand2 className="w-12 h-12 text-primary-600 dark:text-primary-400" />
+            <div className="inline-flex p-4 bg-primary-100 dark:bg-primary-900/20 rounded-full mb-4">
+              <Sparkles className="w-12 h-12 text-primary-600 dark:text-primary-400" />
             </div>
             <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100 mb-2 tracking-tight">
               Get AI-Powered Recommendations
@@ -155,14 +166,13 @@ export default function AIAnalysis({ repositoryData, repoUrl }) {
           </div>
           <button
             onClick={handleGenerateInsights}
-            className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-primary-600 via-primary-500 to-accent-500 hover:from-primary-700 hover:via-primary-600 hover:to-accent-600 text-white rounded-xl font-bold text-lg transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105 transform tracking-tight"
+            className="inline-flex items-center gap-3 px-6 md:px-8 py-3 md:py-4 bg-primary-500 hover:bg-primary-600 text-white rounded-xl font-bold text-base md:text-lg transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105 transform tracking-tight"
           >
-            <Sparkles className="w-6 h-6" />
-            Generate AI Insights
-            <Wand2 className="w-5 h-5" />
+            <Sparkles className="w-5 h-5 md:w-6 md:h-6" />
+            <span className="whitespace-nowrap">Generate AI Insights</span>
           </button>
           <p className="text-xs text-slate-500 dark:text-slate-500 mt-4 font-medium">
-            ✨ Powered by advanced AI • Takes 10-20 seconds
+            Powered by advanced AI • Takes 10-20 seconds
           </p>
         </div>
       )}
@@ -194,7 +204,7 @@ export default function AIAnalysis({ repositoryData, repoUrl }) {
       {analysis && !loading && (
         <div>
           {/* Summary */}
-          <div className="mb-8 p-6 bg-gradient-to-br from-primary-50 to-accent-50 dark:from-primary-900/10 dark:to-accent-900/10 rounded-lg border border-primary-200 dark:border-primary-800">
+          <div className="mb-8 p-6 bg-primary-50 dark:bg-primary-900/10 rounded-lg border border-primary-200 dark:border-primary-800">
             <div className="markdown-content text-slate-700 dark:text-slate-200 text-lg leading-relaxed font-normal">
               <ReactMarkdown>{analysis.summary}</ReactMarkdown>
             </div>

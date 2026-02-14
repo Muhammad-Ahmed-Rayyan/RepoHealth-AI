@@ -4,8 +4,12 @@
 
 A beautiful, full-stack web application that analyzes any public GitHub repository and provides comprehensive health metrics, visualizations, and AI-generated insights to help you improve your repository.
 
-![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
+![Version](https://img.shields.io/badge/version-1.0.0-teal.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
+
+## 🌟 Live Demo
+
+Check out the live application: [RepoHealth AI](https://repohealth-ai.vercel.app)
 
 ## ✨ Features
 
@@ -14,18 +18,22 @@ A beautiful, full-stack web application that analyzes any public GitHub reposito
 - **Real-time Metrics**: Stars, forks, issues, contributors, and more
 - **Beautiful Visualizations**: Interactive charts showing commit activity, language breakdown, top contributors, and issues trends
 - **Responsive Design**: Fully optimized for desktop, tablet, and mobile devices
+- **Dark/Light Theme**: Toggle between themes with persistent preference
 
 ### 🤖 AI-Powered Insights
+- **Manual Trigger**: Generate AI insights on-demand to save API costs
 - **Intelligent Analysis**: Uses OpenAI or Google Gemini to analyze your repository
 - **Actionable Suggestions**: Get prioritized, specific recommendations to improve your repo
 - **Strength Recognition**: Identifies what your repository does well
 - **Category-based Improvements**: Suggestions organized by Documentation, Maintenance, Community, Testing, Security, and Quality
 
 ### 🎨 Modern UI/UX
-- **Dark Theme**: Eye-friendly dark mode with gradient accents
-- **Smooth Animations**: Counting animations, fade-ins, and transitions
+- **Professional Design**: Polished cards with depth, shadows, and subtle gradients
+- **Dark/Light Theme**: Seamless theme switching with system preference detection
+- **Smooth Animations**: Counting animations, fade-ins, and micro-interactions
 - **Skeleton Loaders**: Beautiful loading states while fetching data
 - **Error Handling**: User-friendly error messages with retry options
+- **Mobile Optimized**: Perfect layout on all screen sizes
 
 ## 🛠 Tech Stack
 
@@ -70,12 +78,7 @@ You'll need the following API keys:
      - Get from: https://makersuite.google.com/app/apikey
      - Free tier available
 
-You'll also need API keys:
-- **GitHub Personal Access Token** - [Create one here](https://github.com/settings/tokens)
-  - For public repos: Select `public_repo` scope
-  - For private repos: Select `repo` scope
-- **OpenAI API Key** - [Get one here](https://platform.openai.com/api-keys)
-  - OR **Google Gemini API Key** - [Get one here](https://makersuite.google.com/app/apikey)
+
 
 ## 🚀 Installation & Setup
 

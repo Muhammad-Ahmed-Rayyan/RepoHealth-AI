@@ -18,7 +18,11 @@
     "ai",
     "analytics"
   ],
-  "author": "",
+  "author": "Muhammad Ahmed Rayyan",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Muhammad-Ahmed-Rayyan/RepoHealth-AI"
+  },
   "license": "MIT",
   "devDependencies": {
     "concurrently": "^8.2.2"

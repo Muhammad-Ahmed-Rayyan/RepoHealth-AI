@@ -38,7 +38,7 @@ export default function HealthScore({ score, grade }) {
   const strokeDashoffset = circumference - (displayScore / 100) * circumference;
 
   return (
-    <div className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-8 text-center animate-scale-in shadow-sm">
+    <div className="bg-gradient-to-b from-white to-slate-50 dark:from-slate-800 dark:to-slate-900 border border-white/5 dark:border-white/5 rounded-2xl p-8 text-center animate-scale-in shadow-lg">
       <h2 className="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-6 tracking-tight">Repository Health Score</h2>
       
       <div className="relative inline-flex items-center justify-center">
@@ -81,7 +81,7 @@ export default function HealthScore({ score, grade }) {
         <div className={`text-2xl font-semibold ${getColor()} mb-1`}>
           {grade.letter}
         </div>
-        <div className="text-slate-600 dark:text-slate-300 text-lg">
+        <div className="text-slate-600 dark:text-slate-300 text-base">
           {grade.description}
         </div>
       </div>

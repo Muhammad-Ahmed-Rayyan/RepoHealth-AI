@@ -61,8 +61,8 @@ const getLanguageColor = (languageName) => {
 };
 
 const ChartCard = ({ title, children }) => (
-  <div className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-6 animate-slide-up shadow-sm">
-    <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100 mb-4 tracking-tight">{title}</h3>
+  <div className="bg-gradient-to-br from-white to-slate-50 dark:from-slate-800 dark:to-slate-800/60 border border-white/5 dark:border-white/5 rounded-2xl p-6 animate-slide-up shadow-lg">
+    <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-600 dark:text-slate-400 mb-4 pb-4 border-b border-white/5 dark:border-white/5">{title}</h3>
     <div className="h-64">
       {children}
     </div>
@@ -184,9 +184,16 @@ export default function Charts({ charts }) {
               wrapperStyle={{ 
                 paddingTop: '24px',
                 paddingBottom: '12px',
-                color: textColor 
+                color: textColor,
+                fontSize: '12px',
+                maxWidth: '100%'
               }}
-              formatter={(value, entry) => `${value}: ${entry.payload.value}%`}
+              formatter={(value, entry) => {
+                // Truncate long language names on mobile
+                const maxLength = 15;
+                const displayName = value.length > maxLength ? value.substring(0, maxLength) + '...' : value;
+                return `${displayName}: ${entry.payload.value}%`;
+              }}
             />
           </PieChart>
         </ResponsiveContainer>
