@@ -1,8 +1,9 @@
 <div align="center">
-
-# 🏥 RepoHealth-AI
-
-**GitHub Repository Health Dashboard with AI-Powered Improvement Suggestions**
+  <img src="https://github.com/Muhammad-Ahmed-Rayyan/RepoHealth-AI/blob/main/RepoHealth-AI.png" width="500">
+  
+  #
+  
+  <p><b>GitHub Repository Health Dashboard with AI-Powered Improvement Suggestions</b></p>
 
 ![Last Commit](https://img.shields.io/github/last-commit/Muhammad-Ahmed-Rayyan/RepoHealth-AI)
 ![React](https://img.shields.io/badge/React-18-61DAFB?logo=react)
@@ -13,15 +14,15 @@
 
 Built with the tools and technologies:
 
-![React](https://img.shields.io/badge/React-18-%2361DAFB.svg?style=for-the-badge&logo=react&logoColor=black)
+![React](https://img.shields.io/badge/React-%2361DAFB.svg?style=for-the-badge&logo=react&logoColor=black)
 ![Vite](https://img.shields.io/badge/Vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
-![TailwindCSS](https://img.shields.io/badge/TailwindCSS-%2338BDF8.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
 ![Node.js](https://img.shields.io/badge/Node.js-%23339933.svg?style=for-the-badge&logo=node.js&logoColor=white)
 ![Express](https://img.shields.io/badge/Express-%23000000.svg?style=for-the-badge&logo=express&logoColor=white)
 ![Recharts](https://img.shields.io/badge/Recharts-Data%20Viz-8884d8?style=for-the-badge)
 ![OpenAI](https://img.shields.io/badge/OpenAI-AI-412991?style=for-the-badge&logo=openai&logoColor=white)
-![Gemini](https://img.shields.io/badge/Gemini-AI-4285F4?style=for-the-badge&logo=google&logoColor=white)
-![Vercel](https://img.shields.io/badge/Vercel-Deployment-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)
+![Gemini](https://img.shields.io/badge/Gemini%203%20Pro-white.svg?style=for-the-badge&logo=google-gemini&logoColor=4285F4)
+![Vercel](https://img.shields.io/badge/Vercel-000000.svg?style=for-the-badge&logo=vercel&logoColor=white)
 
 </div>
 
@@ -101,19 +102,6 @@ GEMINI_API_KEY=your_gemini_api_key
 
 ---
 
-## 🎯 Health Score Breakdown
-
-| Factor | Points |
-|--------|--------|
-| README Quality | 20 |
-| License Presence | 15 |
-| Issues Activity | 20 |
-| Commit Frequency | 20 |
-| Contributors | 10 |
-| Community Engagement | 15 |
-
----
-
 ## 📁 Project Structure
 
 ```
@@ -157,8 +145,23 @@ RepoHealthAI/
 
 ---
 
+
+## 🎯 Health Score Breakdown
+
+| Factor | Points |
+|--------|--------|
+| README Quality | 20 |
+| License Presence | 15 |
+| Issues Activity | 20 |
+| Commit Frequency | 20 |
+| Contributors | 10 |
+| Community Engagement | 15 |
+
+---
+
+
 <div align="center">
 
-⭐ If you find RepoHealth AI useful, don’t forget to star the repository!
+⭐ Like this repo? Star it to keep it going!
 
 </div>
