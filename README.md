@@ -81,9 +81,14 @@ The platform calculates a repository health score (0–100) based on documentati
 ## 🚀 Installation & Setup
 
 ```bash
+# Clone the repository
 git clone https://github.com/Muhammad-Ahmed-Rayyan/RepoHealth-AI.git
 cd RepoHealth-AI
+
+# Install dependencies
 npm run install-all
+
+# Run the development server
 npm run dev
 ```
 
